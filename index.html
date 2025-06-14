@@ -423,13 +423,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update counters
     function updateCounters() {
-        const categories = ['primaries', 'secondaries', 'grenades', 'stratagems'];
+        const categories = [
+            { key: 'primaries', className: 'primary-count' },
+            { key: 'secondaries', className: 'secondary-count' },
+            { key: 'grenades', className: 'grenade-count' },
+            { key: 'stratagems', className: 'stratagem-count' }
+        ];
+        
         categories.forEach(category => {
-            const checkboxes = document.querySelectorAll(`input[data-category="${category}"]`);
+            const checkboxes = document.querySelectorAll(`input[data-category="${category.key}"]`);
             const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
             const totalCount = checkboxes.length;
             
-            const counterElement = document.querySelector(`.${category.slice(0, -1)}-count`);
+            const counterElement = document.querySelector(`.${category.className}`);
             if (counterElement) {
                 counterElement.textContent = `${checkedCount}/${totalCount}`;
                 
