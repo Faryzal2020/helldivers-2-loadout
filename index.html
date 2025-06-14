@@ -17,76 +17,200 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1" />
 
-        <style>button{touch-action:manipulation;}</style>
+        <style>
+            button{touch-action:manipulation;}
+            
+            /* Custom Scrollbar */
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(39, 39, 42, 0.5);
+                border-radius: 3px;
+            }
+            
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(250, 204, 21, 0.3);
+                border-radius: 3px;
+            }
+            
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(250, 204, 21, 0.5);
+            }
+            
+            /* Filter animations */
+            .filter-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            
+            .filter-content.expanded {
+                max-height: 500px;
+            }
+            
+            .filter-chevron.rotated {
+                transform: rotate(180deg);
+            }
+        </style>
     </head>
     <body>
-        <div class="bg-zinc-950 text-white min-h-dvh flex bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')]">
+        <div class="bg-zinc-950 text-white h-screen flex bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] overflow-hidden">
             <!-- Left Customization Panel -->
-            <div id="customization-panel" class="w-80 bg-black/80 backdrop-blur-sm border-r border-yellow-500/30 p-6 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative z-40 h-full">
-                <div class="space-y-6">
+            <div id="customization-panel" class="w-80 bg-black/90 backdrop-blur-sm border-r border-yellow-500/30 overflow-hidden transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative z-40 h-full flex flex-col">
+                <!-- Panel Header -->
+                <div class="p-4 border-b border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0">
                     <div class="text-center">
-                        <h2 class="text-xl font-bold text-yellow-400 uppercase tracking-wider mb-2">Loadout Filter</h2>
+                        <h2 class="text-lg font-bold text-yellow-400 uppercase tracking-wider mb-1">Loadout Filter</h2>
                         <p class="text-xs text-zinc-400">Customize your randomization pool</p>
                     </div>
+                </div>
 
-                    <!-- Weapon Categories -->
-                    <div class="space-y-4">
-                        <div>
-                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Primary Weapons</h3>
-                            <div class="space-y-2 max-h-40 overflow-y-auto">
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" id="select-all-primaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
-                                    <span class="text-yellow-200 font-medium">Select All</span>
-                                </label>
-                                <div id="primary-filters" class="space-y-1 pl-4">
-                                    <!-- Primary weapon checkboxes will be populated here -->
+                <!-- Scrollable Content -->
+                <div class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
+                    <!-- Primary Weapons Section -->
+                    <div class="filter-section">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 rounded-t-lg border border-yellow-500/30 cursor-pointer" data-target="primary-content">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Primary Weapons</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="primary-count text-xs text-zinc-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                    <svg class="filter-chevron w-4 h-4 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
                                 </div>
                             </div>
                         </div>
-
-                        <div>
-                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Secondary Weapons</h3>
-                            <div class="space-y-2 max-h-40 overflow-y-auto">
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" id="select-all-secondaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
-                                    <span class="text-yellow-200 font-medium">Select All</span>
-                                </label>
-                                <div id="secondary-filters" class="space-y-1 pl-4">
-                                    <!-- Secondary weapon checkboxes will be populated here -->
-                                </div>
+                        <div id="primary-content" class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 rounded-b-lg p-3 space-y-2">
+                            <!-- Search Box -->
+                            <div class="relative">
+                                <input type="text" id="primary-search" placeholder="Search primary weapons..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
+                                <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
                             </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Grenades</h3>
-                            <div class="space-y-2 max-h-32 overflow-y-auto">
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" id="select-all-grenades" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
-                                    <span class="text-yellow-200 font-medium">Select All</span>
-                                </label>
-                                <div id="grenade-filters" class="space-y-1 pl-4">
-                                    <!-- Grenade checkboxes will be populated here -->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Stratagems</h3>
-                            <div class="space-y-2 max-h-48 overflow-y-auto">
-                                <label class="flex items-center space-x-2 text-sm">
-                                    <input type="checkbox" id="select-all-stratagems" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
-                                    <span class="text-yellow-200 font-medium">Select All</span>
-                                </label>
-                                <div id="stratagem-filters" class="space-y-1 pl-4">
-                                    <!-- Stratagem checkboxes will be populated here -->
-                                </div>
+                            <!-- Select All -->
+                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors">
+                                <input type="checkbox" id="select-all-primaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
+                                <span class="text-yellow-200 font-medium">Select All</span>
+                            </label>
+                            <!-- Items Container -->
+                            <div id="primary-filters" class="space-y-1 max-h-32 overflow-y-auto custom-scrollbar">
+                                <!-- Primary weapon checkboxes will be populated here -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Reset Button -->
-                    <button id="reset-filters" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
-                        Reset All Filters
+                    <!-- Secondary Weapons Section -->
+                    <div class="filter-section">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 rounded-t-lg border border-yellow-500/30 cursor-pointer" data-target="secondary-content">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Secondary Weapons</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="secondary-count text-xs text-zinc-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                    <svg class="filter-chevron w-4 h-4 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="secondary-content" class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 rounded-b-lg p-3 space-y-2">
+                            <!-- Search Box -->
+                            <div class="relative">
+                                <input type="text" id="secondary-search" placeholder="Search secondary weapons..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
+                                <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <!-- Select All -->
+                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors">
+                                <input type="checkbox" id="select-all-secondaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
+                                <span class="text-yellow-200 font-medium">Select All</span>
+                            </label>
+                            <!-- Items Container -->
+                            <div id="secondary-filters" class="space-y-1 max-h-32 overflow-y-auto custom-scrollbar">
+                                <!-- Secondary weapon checkboxes will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grenades Section -->
+                    <div class="filter-section">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 rounded-t-lg border border-yellow-500/30 cursor-pointer" data-target="grenade-content">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Grenades</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="grenade-count text-xs text-zinc-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                    <svg class="filter-chevron w-4 h-4 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="grenade-content" class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 rounded-b-lg p-3 space-y-2">
+                            <!-- Search Box -->
+                            <div class="relative">
+                                <input type="text" id="grenade-search" placeholder="Search grenades..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
+                                <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <!-- Select All -->
+                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors">
+                                <input type="checkbox" id="select-all-grenades" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
+                                <span class="text-yellow-200 font-medium">Select All</span>
+                            </label>
+                            <!-- Items Container -->
+                            <div id="grenade-filters" class="space-y-1 max-h-24 overflow-y-auto custom-scrollbar">
+                                <!-- Grenade checkboxes will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stratagems Section -->
+                    <div class="filter-section">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 rounded-t-lg border border-yellow-500/30 cursor-pointer" data-target="stratagem-content">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Stratagems</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="stratagem-count text-xs text-zinc-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                    <svg class="filter-chevron w-4 h-4 text-yellow-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="stratagem-content" class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 rounded-b-lg p-3 space-y-2">
+                            <!-- Search Box -->
+                            <div class="relative">
+                                <input type="text" id="stratagem-search" placeholder="Search stratagems..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
+                                <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <!-- Select All -->
+                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors">
+                                <input type="checkbox" id="select-all-stratagems" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
+                                <span class="text-yellow-200 font-medium">Select All</span>
+                            </label>
+                            <!-- Items Container -->
+                            <div id="stratagem-filters" class="space-y-1 max-h-40 overflow-y-auto custom-scrollbar">
+                                <!-- Stratagem checkboxes will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel Footer -->
+                <div class="p-4 border-t border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0">
+                    <button id="reset-filters" class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 px-3 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <span class="text-sm">Reset All Filters</span>
+                        </div>
                     </button>
                 </div>
             </div>
@@ -99,90 +223,95 @@
             </button>
 
             <!-- Main Content -->
-            <div class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 font-mono space-y-6 md:space-y-8">
-                <div class="text-center space-y-2 z-10">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-yellow-400 uppercase tracking-wider" style="text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 20px #000, 0 0 30px #000;">Loadout Roulette</h1>
-                    <p class="text-zinc-400 text-sm sm:text-base">Super Earth Command has randomized your next drop. Make us proud.</p>
+            <div class="flex-1 flex flex-col h-full overflow-hidden">
+                <!-- Header Section -->
+                <div class="flex-shrink-0 text-center py-4 px-4">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-yellow-400 uppercase tracking-wider mb-2" style="text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 20px #000, 0 0 30px #000;">Loadout Roulette</h1>
+                    <p class="text-zinc-400 text-xs sm:text-sm">Super Earth Command has randomized your next drop. Make us proud.</p>
                 </div>
 
-                <div id="loadout-display" class="w-full max-w-7xl space-y-8 z-10">
-                    <!-- Weapons & Grenade -->
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Armament</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                            <!-- Primary -->
-                            <div id="primary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="primary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Primary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                <!-- Loadout Display -->
+                <div class="flex-1 flex flex-col justify-center px-4 py-2 overflow-hidden">
+                    <div id="loadout-display" class="w-full max-w-6xl mx-auto space-y-4">
+                        <!-- Weapons & Grenade -->
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-bold text-yellow-300 mb-3 border-b-2 border-yellow-500/50 pb-1 uppercase tracking-widest">Armament</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                                <!-- Primary -->
+                                <div id="primary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                    <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="primary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Primary Weapon" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                    <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="primary-name" class="text-sm sm:text-base font-semibold text-zinc-400 transition-colors duration-300">PRIMARY WEAPON</p>
+                                    </div>
                                 </div>
-                                <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="primary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">PRIMARY WEAPON</p>
+                                <!-- Secondary -->
+                                <div id="secondary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                    <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="secondary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Secondary Weapon" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="secondary-name" class="text-sm sm:text-base font-semibold text-zinc-400 transition-colors duration-300">SECONDARY WEAPON</p>
+                                    </div>
+                                </div>
+                                <!-- Grenade -->
+                                <div id="grenade-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                    <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="grenade-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Grenade" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="grenade-name" class="text-sm sm:text-base font-semibold text-zinc-400 transition-colors duration-300">GRENADE</p>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Secondary -->
-                            <div id="secondary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="secondary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Secondary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                        </div>
+
+                        <!-- Stratagems -->
+                        <div>
+                            <h2 class="text-lg sm:text-xl font-bold text-yellow-300 mb-3 border-b-2 border-yellow-500/50 pb-1 uppercase tracking-widest">Stratagems</h2>
+                            <div id="stratagem-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                                <!-- Stratagem slots -->
+                                <div id="stratagem-card-0" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                     <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="stratagem-img-0" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 1" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="stratagem-name-0" class="text-xs sm:text-sm font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                    </div>
                                 </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="secondary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">SECONDARY WEAPON</p>
+                                 <div id="stratagem-card-1" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                     <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="stratagem-img-1" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 2" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="stratagem-name-1" class="text-xs sm:text-sm font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Grenade -->
-                            <div id="grenade-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="grenade-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Grenade" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                 <div id="stratagem-card-2" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                     <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="stratagem-img-2" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 3" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="stratagem-name-2" class="text-xs sm:text-sm font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                    </div>
                                 </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="grenade-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">GRENADE</p>
+                                 <div id="stratagem-card-3" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-3 flex flex-col items-center justify-between transition-all duration-300 min-h-[180px] sm:min-h-[200px] backdrop-blur-sm">
+                                     <div class="flex-grow flex items-center justify-center w-full">
+                                        <img id="stratagem-img-3" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 4" class="max-h-20 sm:max-h-24 object-contain filter grayscale transition-all duration-300">
+                                    </div>
+                                     <div class="h-12 flex flex-col items-center justify-center text-center">
+                                         <p id="stratagem-name-3" class="text-xs sm:text-sm font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Stratagems -->
-                    <div>
-                        <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Stratagems</h2>
-                        <div id="stratagem-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                            <!-- Stratagem slots -->
-                            <div id="stratagem-card-0" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                 <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="stratagem-img-0" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 1" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                                </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="stratagem-name-0" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                                </div>
-                            </div>
-                             <div id="stratagem-card-1" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                 <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="stratagem-img-1" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 2" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                                </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="stratagem-name-1" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                                </div>
-                            </div>
-                             <div id="stratagem-card-2" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                 <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="stratagem-img-2" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 3" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                                </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="stratagem-name-2" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                                </div>
-                            </div>
-                             <div id="stratagem-card-3" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                                 <div class="flex-grow flex items-center justify-center w-full">
-                                    <img id="stratagem-img-3" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 4" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                                </div>
-                                 <div class="h-16 flex flex-col items-center justify-center text-center">
-                                     <p id="stratagem-name-3" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="py-4 md:py-6 z-10">
-                    <button id="roll-button" class="touch-manipulation bg-yellow-400 text-zinc-900 text-2xl md:text-3xl font-black py-4 px-12 rounded-lg shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-200 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none uppercase tracking-widest">
+                <!-- Deploy Button -->
+                <div class="flex-shrink-0 text-center py-4 px-4">
+                    <button id="roll-button" class="touch-manipulation bg-yellow-400 text-zinc-900 text-lg sm:text-xl md:text-2xl font-black py-3 px-8 rounded-lg shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-200 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none uppercase tracking-widest">
                         LOADING DATA...
                     </button>
                 </div>
@@ -251,6 +380,71 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Collapsible sections functionality
+    document.querySelectorAll('.filter-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const targetId = header.dataset.target;
+            const content = document.getElementById(targetId);
+            const chevron = header.querySelector('.filter-chevron');
+            
+            content.classList.toggle('expanded');
+            chevron.classList.toggle('rotated');
+        });
+    });
+
+    // Initialize all sections as expanded
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.filter-content').forEach(content => {
+            content.classList.add('expanded');
+        });
+        document.querySelectorAll('.filter-chevron').forEach(chevron => {
+            chevron.classList.add('rotated');
+        });
+    });
+
+    // Search functionality
+    function setupSearch(searchId, containerId, category) {
+        const searchInput = document.getElementById(searchId);
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const container = document.getElementById(containerId);
+            const items = container.querySelectorAll('label');
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // Update counters
+    function updateCounters() {
+        const categories = ['primaries', 'secondaries', 'grenades', 'stratagems'];
+        categories.forEach(category => {
+            const checkboxes = document.querySelectorAll(`input[data-category="${category}"]`);
+            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const totalCount = checkboxes.length;
+            
+            const counterElement = document.querySelector(`.${category.slice(0, -1)}-count`);
+            if (counterElement) {
+                counterElement.textContent = `${checkedCount}/${totalCount}`;
+                
+                // Color coding
+                if (checkedCount === 0) {
+                    counterElement.className = counterElement.className.replace(/bg-\w+-\d+/, 'bg-red-600');
+                } else if (checkedCount === totalCount) {
+                    counterElement.className = counterElement.className.replace(/bg-\w+-\d+/, 'bg-green-600');
+                } else {
+                    counterElement.className = counterElement.className.replace(/bg-\w+-\d+/, 'bg-yellow-600');
+                }
+            }
+        });
+    }
+
     async function loadData() {
         try {
             const responses = await Promise.all([
@@ -294,6 +488,15 @@ document.addEventListener('DOMContentLoaded', () => {
         populateFilterSection('secondary-filters', 'select-all-secondaries', data.secondaries, 'secondaries');
         populateFilterSection('grenade-filters', 'select-all-grenades', data.grenades, 'grenades');
         populateFilterSection('stratagem-filters', 'select-all-stratagems', data.stratagems, 'stratagems');
+        
+        // Setup search functionality
+        setupSearch('primary-search', 'primary-filters', 'primaries');
+        setupSearch('secondary-search', 'secondary-filters', 'secondaries');
+        setupSearch('grenade-search', 'grenade-filters', 'grenades');
+        setupSearch('stratagem-search', 'stratagem-filters', 'stratagems');
+        
+        // Update initial counters
+        updateCounters();
     }
 
     function populateFilterSection(containerId, selectAllId, items, dataKey) {
@@ -306,25 +509,28 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create checkboxes for each item
         items.forEach((item, index) => {
             const label = document.createElement('label');
-            label.className = 'flex items-center space-x-2 text-xs';
+            label.className = 'flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/30 rounded border border-zinc-700/50 hover:bg-zinc-700/50 transition-colors cursor-pointer';
             
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.checked = true;
-            checkbox.className = 'rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400';
+            checkbox.className = 'rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0 w-3 h-3';
             checkbox.dataset.category = dataKey;
             checkbox.dataset.index = index;
             
             const span = document.createElement('span');
             span.textContent = item.name;
-            span.className = 'text-zinc-300';
+            span.className = 'text-zinc-300 flex-1 text-xs leading-tight';
             
             label.appendChild(checkbox);
             label.appendChild(span);
             container.appendChild(label);
             
             // Add event listener for individual checkboxes
-            checkbox.addEventListener('change', () => updateFilteredData());
+            checkbox.addEventListener('change', () => {
+                updateFilteredData();
+                updateCounters();
+            });
         });
         
         // Set up select all functionality
@@ -333,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkboxes = container.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(cb => cb.checked = e.target.checked);
             updateFilteredData();
+            updateCounters();
         });
     }
 
@@ -355,7 +562,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('reset-filters').addEventListener('click', () => {
         const allCheckboxes = document.querySelectorAll('#customization-panel input[type="checkbox"]');
         allCheckboxes.forEach(cb => cb.checked = true);
+        
+        // Clear all search inputs
+        document.querySelectorAll('#customization-panel input[type="text"]').forEach(input => {
+            input.value = '';
+            // Trigger input event to show all items
+            input.dispatchEvent(new Event('input'));
+        });
+        
         updateFilteredData();
+        updateCounters();
     });
     
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
