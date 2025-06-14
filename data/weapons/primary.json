@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Flam-66 Torcher",
+    "icon": "images/weapons/primary/flam-66-torcher.png"
+  },
+  {
+    "name": "Jar-5 Dominator",
+    "icon": "images/weapons/primary/jar-5-dominator.png"
+  },
+  {
+    "name": "Las-17 Double Edge Sickle",
+    "icon": "images/weapons/primary/las-17-double-edge-sickle.png"
+  },
+  {
+    "name": "Plas-101 Purifier",
+    "icon": "images/weapons/primary/plas-101-purifier.png"
+  },
+  {
+    "name": "Plas-1 Scorcher",
+    "icon": "images/weapons/primary/plas-1-scorcher.png"
+  },
+  {
+    "name": "Arc-12 Blitzer",
+    "icon": "images/weapons/primary/arc-12-blitzer.png"
+  },
+  {
+    "name": "SG-8P Punisher Plasma",
+    "icon": "images/weapons/primary/sg-8p-punisher-plasma.png"
+  },
+  {
+    "name": "Plas-39 Accelerator Rifle",
+    "icon": "images/weapons/primary/plas-39-accelerator-rifle.png"
+  },
+  {
+    "name": "Las-16 Sickle",
+    "icon": "images/weapons/primary/las-16-sickle.png"
+  },
+  {
+    "name": "Las-5 Scythe",
+    "icon": "images/weapons/primary/las-5-scythe.png"
+  },
+  {
+    "name": "R-36 Eruptor",
+    "icon": "images/weapons/primary/r-36-eruptor.png"
+  },
+  {
+    "name": "CB-9 Exploding Crossbow",
+    "icon": "images/weapons/primary/cb-9-exploding-crossbow.png"
+  },
+  {
+    "name": "SG-20 Halt",
+    "icon": "images/weapons/primary/sg-20-halt.png"
+  },
+  {
+    "name": "SG-8S Slugger",
+    "icon": "images/weapons/primary/sg-8s-slugger.png"
+  },
+  {
+    "name": "SG-225IE Breaker Incendiary",
+    "icon": "images/weapons/primary/sg-225ie-breaker-incendiary.png"
+  },
+  {
+    "name": "SG-225 Breaker",
+    "icon": "images/weapons/primary/sg-225-breaker.png"
+  },
+  {
+    "name": "SG-451 Cookout",
+    "icon": "images/weapons/primary/sg-451-cookout.png"
+  },
+  {
+    "name": "SG-8 Punisher",
+    "icon": "images/weapons/primary/sg-8-punisher.png"
+  },
+  {
+    "name": "SMG-32 Reprimand",
+    "icon": "images/weapons/primary/smg-32-reprimand.png"
+  },
+  {
+    "name": "SMG-72 Pummeler",
+    "icon": "images/weapons/primary/smg-72-pummeler.png"
+  },
+  {
+    "name": "SMG-37 Defender",
+    "icon": "images/weapons/primary/smg-37-defender.png"
+  },
+  {
+    "name": "STA-11 SMG",
+    "icon": "images/weapons/primary/sta-11-smg.png"
+  },
+  {
+    "name": "MP-98 Knight",
+    "icon": "images/weapons/primary/mp-98-knight.png"
+  },
+  {
+    "name": "R-63CS Diligence Counter Sniper",
+    "icon": "images/weapons/primary/r-63cs-diligence-counter-sniper.png"
+  },
+  {
+    "name": "R-6 Deadeye",
+    "icon": "images/weapons/primary/r-6-deadeye.png"
+  },
+  {
+    "name": "R-2124 Constitution",
+    "icon": "images/weapons/primary/r-2124-constitution.png"
+  },
+  {
+    "name": "R-63 Diligence",
+    "icon": "images/weapons/primary/r-63-diligence.png"
+  },
+  {
+    "name": "R-2 Amendment",
+    "icon": "images/weapons/primary/r-2-amendment.png"
+  },
+  {
+    "name": "BR-14 Adjudicator",
+    "icon": "images/weapons/primary/br-14-adjudicator.png"
+  },
+  {
+    "name": "AR-23P Liberator Penetrator",
+    "icon": "images/weapons/primary/ar-23p-liberator-penetrator.png"
+  },
+  {
+    "name": "AR-32 Pacifier",
+    "icon": "images/weapons/primary/ar-32-pacifier.png"
+  },
+  {
+    "name": "AR-61 Tenderizer",
+    "icon": "images/weapons/primary/ar-61-tenderizer.png"
+  },
+  {
+    "name": "AR-23A Liberator Carbine",
+    "icon": "images/weapons/primary/ar-23a-liberator-carbine.png"
+  },
+  {
+    "name": "STA-52 Assault Rifle",
+    "icon": "images/weapons/primary/sta-52-assault-rifle.png"
+  },
+  {
+    "name": "AR-23C Liberator Concussive",
+    "icon": "images/weapons/primary/ar-23c-liberator-concussive.png"
+  },
+  {
+    "name": "AR-23 Liberator",
+    "icon": "images/weapons/primary/ar-23-liberator.png"
+  }
+] 

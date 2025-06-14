@@ -1,0 +1,58 @@
+[
+  {
+    "name": "G-123 Thermite",
+    "icon": "images/weapons/throwable/G-123_Thermite_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-4 Gas",
+    "icon": "images/weapons/throwable/G-4_Gas_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-23 Stun",
+    "icon": "images/weapons/throwable/G-23_Stun_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-109 Urchin",
+    "icon": "images/weapons/throwable/G-109_Urchin_Throwable_Icon.png"
+  },
+  {
+    "name": "G-50 Seeker",
+    "icon": "images/weapons/throwable/G-50_Seeker_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-16 Impact",
+    "icon": "images/weapons/throwable/G-16_Impact_Throwable_Weaponry.png"
+  },
+  {
+    "name": "K-2 Throwing Knife",
+    "icon": "images/weapons/throwable/K-2_Throwing_Knife_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-142 Pyrotech",
+    "icon": "images/weapons/throwable/G-142_Pyrotech_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-13 Incendiary Impact",
+    "icon": "images/weapons/throwable/G-13_Incendiary_Impact_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-3 Smoke",
+    "icon": "images/weapons/throwable/G-3_Smoke_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-12 High Explosive",
+    "icon": "images/weapons/throwable/G-12_High_Explosive_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-10 Incendiary",
+    "icon": "images/weapons/throwable/G-10_Incendiary_Throwable_Weaponry.png"
+  },
+  {
+    "name": "G-6 Frag",
+    "icon": "images/weapons/throwable/G-6_Frag_Throwable_Weaponry.png"
+  },
+  {
+    "name": "TED-63 Dynamite",
+    "icon": "images/weapons/throwable/TED-63_Dynamite_Throwable_Weaponry.png"
+  }
+] 
