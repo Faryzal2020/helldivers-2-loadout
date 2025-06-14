@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://slopable.com/tailwind.js?v=1"></script>
+
+        <title>hd2 loadout</title>
+
+        <meta property="og:title" content="hd2 loadout">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="created with slopable.com">
+        <meta property="og:image" content="https://hd2-loadout-nga.bjir.link/og-image.png">
+        <meta property="og:url" content="https://hd2-loadout-nga.bjir.link">
+
+        <link rel="icon" type="image/png" href="/favicon-96x96.png?v=1" sizes="96x96" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1" />
+
+        <style>button{touch-action:manipulation;}</style>
+    </head>
+    <body>
+                    <div id="main-container" class="bg-zinc-950 text-white min-h-dvh flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 font-mono space-y-6 md:space-y-8 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')]">
+    
+    <div class="text-center space-y-2 z-10">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-yellow-400 uppercase tracking-wider" style="text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 20px #000, 0 0 30px #000;">Loadout Roulette</h1>
+        <p class="text-zinc-400 text-sm sm:text-base">Super Earth Command has randomized your next drop. Make us proud.</p>
+    </div>
+
+    <div id="loadout-display" class="w-full max-w-7xl space-y-8 z-10">
+        <!-- Weapons & Grenade -->
+        <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Armament</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <!-- Primary -->
+                <div id="primary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                    <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="primary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Primary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                    <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="primary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">PRIMARY WEAPON</p>
+                    </div>
+                </div>
+                <!-- Secondary -->
+                <div id="secondary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                    <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="secondary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Secondary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="secondary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">SECONDARY WEAPON</p>
+                    </div>
+                </div>
+                <!-- Grenade -->
+                <div id="grenade-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                    <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="grenade-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Grenade" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="grenade-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">GRENADE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stratagems -->
+        <div>
+            <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Stratagems</h2>
+            <div id="stratagem-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Stratagem slots -->
+                <div id="stratagem-card-0" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                     <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="stratagem-img-0" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 1" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="stratagem-name-0" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                    </div>
+                </div>
+                 <div id="stratagem-card-1" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                     <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="stratagem-img-1" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 2" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="stratagem-name-1" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                    </div>
+                </div>
+                 <div id="stratagem-card-2" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                     <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="stratagem-img-2" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 3" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="stratagem-name-2" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                    </div>
+                </div>
+                 <div id="stratagem-card-3" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                     <div class="flex-grow flex items-center justify-center w-full">
+                        <img id="stratagem-img-3" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 4" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    </div>
+                     <div class="h-16 flex flex-col items-center justify-center text-center">
+                         <p id="stratagem-name-3" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-4 md:py-6 z-10">
+        <button id="roll-button" class="touch-manipulation bg-yellow-400 text-zinc-900 text-2xl md:text-3xl font-black py-4 px-12 rounded-lg shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-200 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none uppercase tracking-widest">
+            LOADING DATA...
+        </button>
+    </div>
+    
+    <audio id="deploy-sound" src="https://www.myinstants.com/media/sounds/deploy.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="https://www.myinstants.com/media/sounds/mission-completed-hd2.mp3" preload="auto"></audio>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const rollButton = document.getElementById('roll-button');
+    
+    const cardElements = {
+        primary: {
+            img: document.getElementById('primary-img'),
+            name: document.getElementById('primary-name'),
+            card: document.getElementById('primary-card'),
+        },
+        secondary: {
+            img: document.getElementById('secondary-img'),
+            name: document.getElementById('secondary-name'),
+            card: document.getElementById('secondary-card'),
+        },
+        grenade: {
+            img: document.getElementById('grenade-img'),
+            name: document.getElementById('grenade-name'),
+            card: document.getElementById('grenade-card'),
+        },
+        stratagems: Array.from({ length: 4 }, (_, i) => ({
+            img: document.getElementById(`stratagem-img-${i}`),
+            name: document.getElementById(`stratagem-name-${i}`),
+            card: document.getElementById(`stratagem-card-${i}`),
+        }))
+    };
+
+    const deploySound = document.getElementById('deploy-sound');
+    const successSound = document.getElementById('success-sound');
+
+    const BASE_URL = 'https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/';
+    const DATA_PATHS = {
+        primaries: 'data/weapons/primary.json',
+        secondaries: 'data/weapons/secondary.json',
+        grenades: 'data/weapons/grenades.json',
+        stratagems: 'data/stratagems/list.json'
+    };
+
+    let data = { primaries: [], secondaries: [], grenades: [], stratagems: [] };
+    let isRolling = false;
+
+    async function loadData() {
+        try {
+            const responses = await Promise.all([
+                fetch(BASE_URL + DATA_PATHS.primaries),
+                fetch(BASE_URL + DATA_PATHS.secondaries),
+                fetch(BASE_URL + DATA_PATHS.grenades),
+                fetch(BASE_URL + DATA_PATHS.stratagems)
+            ]);
+
+            for (const res of responses) {
+                if (!res.ok) throw new Error(`Failed to fetch ${res.url}`);
+            }
+
+            const [primaryData, secondaryData, grenadeData, stratagemData] = await Promise.all(responses.map(res => res.json()));
+            
+            data.primaries = primaryData;
+            data.secondaries = secondaryData;
+            data.grenades = grenadeData;
+            data.stratagems = Object.values(stratagemData).flat();
+            
+            rollButton.disabled = false;
+            rollButton.textContent = 'DEPLOY!';
+        } catch (error) {
+            console.error('Failed to load Helldivers data:', error);
+            rollButton.textContent = 'DATA ERROR';
+            rollButton.classList.add('!bg-red-600', '!text-white');
+        }
+    }
+    
+    const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    const getUniqueStratagems = (count) => shuffleArray([...data.stratagems]).slice(0, count);
+    
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    
+    const playSound = (audioElement) => {
+        audioElement.currentTime = 0;
+        audioElement.play().catch(e => console.warn("Sound play failed. User interaction might be needed.", e));
+    }
+
+    async function animateRoll(card, dataArray, finalItem, duration = 1500) {
+        const interval = 60;
+        const steps = duration / interval;
+        
+        card.card.classList.add('border-yellow-400/50', 'animate-pulse');
+        card.img.classList.add('blur-sm', 'scale-90');
+        
+        for (let i = 0; i < steps; i++) {
+            const randomItem = getRandomItem(dataArray);
+            card.img.src = BASE_URL + randomItem.icon;
+            if(i > steps - 5) card.name.textContent = randomItem.name.toUpperCase();
+            await sleep(interval);
+        }
+        
+        card.img.src = BASE_URL + finalItem.icon;
+        card.name.textContent = finalItem.name.toUpperCase();
+        card.card.classList.remove('border-yellow-400/50', 'animate-pulse', 'border-zinc-700');
+        card.card.classList.add('border-yellow-400');
+        card.img.classList.remove('filter', 'grayscale', 'blur-sm', 'scale-90');
+        card.name.classList.remove('text-zinc-400');
+        card.name.classList.add('text-white');
+    }
+
+    function resetCards() {
+        const allCards = [cardElements.primary, cardElements.secondary, cardElements.grenade, ...cardElements.stratagems];
+        allCards.forEach(({ card, img, name }) => {
+            card.classList.remove('border-yellow-400');
+            card.classList.add('border-zinc-700');
+            img.classList.add('filter', 'grayscale');
+            name.classList.remove('text-white');
+            name.classList.add('text-zinc-400');
+        });
+    }
+
+    async function handleRoll() {
+        if (isRolling || data.primaries.length === 0) return;
+        isRolling = true;
+        rollButton.disabled = true;
+        rollButton.textContent = 'DEPLOYING...';
+        
+        playSound(deploySound);
+        resetCards();
+        await sleep(100);
+
+        const selections = {
+            primary: getRandomItem(data.primaries),
+            secondary: getRandomItem(data.secondaries),
+            grenade: getRandomItem(data.grenades),
+            stratagems: getUniqueStratagems(4)
+        };
+        
+        const animations = [
+            animateRoll(cardElements.primary, data.primaries, selections.primary, 1500),
+            animateRoll(cardElements.secondary, data.secondaries, selections.secondary, 1700),
+            animateRoll(cardElements.grenade, data.grenades, selections.grenade, 1900),
+            ...selections.stratagems.map((strat, i) => 
+                animateRoll(cardElements.stratagems[i], data.stratagems, strat, 2100 + i * 200)
+            )
+        ];
+
+        await Promise.all(animations);
+        
+        playSound(successSound);
+
+        isRolling = false;
+        rollButton.disabled = false;
+        rollButton.textContent = 'GO AGAIN, DIVER!';
+    }
+    
+    rollButton.addEventListener('click', handleRoll);
+    rollButton.disabled = true;
+    loadData();
+});
+</script>
+        
+        <!-- Bottom right banners container -->
+        <div id="bannerContainer" class="fixed bottom-5 right-5 max-sm:bottom-3 max-sm:right-3 flex flex-col gap-2.5 z-50 items-end">
+            <!-- Share and copy links banner -->
+            <div class="bg-white/90 shadow-md rounded-lg px-3 py-2 flex justify-between items-center gap-2 relative">
+                <!-- Close button -->
+                <button id="closeBannerButton" class="absolute -top-3.5 -left-3.5 bg-white shadow-md rounded-full p-1 text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                                <button id="shareButton" class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-blue-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                    </svg>
+                    <span class="font-medium text-xs text-gray-700 hover:text-gray-900 sm:text-lg">share</span>
+                </button>
+                <div class="h-4 w-px bg-gray-300"></div>
+                <button id="copyButton" class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-green-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" />
+                    </svg>
+                    <span class="font-medium text-xs text-gray-700 hover:text-gray-900 sm:text-lg">copy link</span>
+                </button>
+            </div>
+
+            <!-- Original banner with slopable credit -->
+            <div class="bg-white/90 shadow-md rounded-lg px-3 py-2">
+                <div class="flex gap-1 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 text-red-600">
+                            <path d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z" />
+                        </svg>
+                        <p class="text-xs text-gray-700 font-medium sm:text-lg">
+                            created with <a href="https://slopable.com" class="text-blue-600 hover:underline">slopable.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const url = 'https://hd2-loadout-nga.bjir.link';
+
+            
+            // Share and copy functionality
+            const bannerContainer = document.getElementById('bannerContainer');
+            const closeBannerButton = document.getElementById('closeBannerButton');
+            const shareButton = document.getElementById('shareButton');
+            const copyButton = document.getElementById('copyButton');
+
+            // Close banner functionality
+            if (closeBannerButton && bannerContainer) {
+                closeBannerButton.addEventListener('click', () => {
+                    bannerContainer.style.display = 'none';
+                });
+            }
+
+            // Share functionality
+            if (shareButton) {
+                shareButton.addEventListener('click', async () => {
+                    try {
+                        if (navigator.share) {
+                            await navigator.share({
+                                title: document.title,
+                                url: url
+                            });
+                        } else {
+                            navigator.clipboard.writeText(url);
+                            alert('Tautan sudah disalin ke clipboard');
+                        }
+                    } catch (error) {
+                        console.error('Error sharing:', error);
+                    }
+                });
+            }
+
+            // Copy link functionality
+            if (copyButton) {
+                copyButton.addEventListener('click', () => {
+                    navigator.clipboard.writeText(url);
+
+                    // Show copied feedback
+                    const originalText = copyButton.querySelector('span').textContent;
+                    copyButton.querySelector('span').classList.add('!text-green-600');
+
+                    setTimeout(() => {
+                        copyButton.querySelector('span').classList.remove('!text-green-600');
+                    }, 700);
+                });
+            }
+        </script>
+    </body>
+</html>
