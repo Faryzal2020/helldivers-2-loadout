@@ -20,102 +20,183 @@
         <style>button{touch-action:manipulation;}</style>
     </head>
     <body>
-                    <div id="main-container" class="bg-zinc-950 text-white min-h-dvh flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 font-mono space-y-6 md:space-y-8 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')]">
-    
-    <div class="text-center space-y-2 z-10">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-yellow-400 uppercase tracking-wider" style="text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 20px #000, 0 0 30px #000;">Loadout Roulette</h1>
-        <p class="text-zinc-400 text-sm sm:text-base">Super Earth Command has randomized your next drop. Make us proud.</p>
-    </div>
+        <div class="bg-zinc-950 text-white min-h-dvh flex bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')]">
+            <!-- Left Customization Panel -->
+            <div id="customization-panel" class="w-80 bg-black/80 backdrop-blur-sm border-r border-yellow-500/30 p-6 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative z-40 h-full">
+                <div class="space-y-6">
+                    <div class="text-center">
+                        <h2 class="text-xl font-bold text-yellow-400 uppercase tracking-wider mb-2">Loadout Filter</h2>
+                        <p class="text-xs text-zinc-400">Customize your randomization pool</p>
+                    </div>
 
-    <div id="loadout-display" class="w-full max-w-7xl space-y-8 z-10">
-        <!-- Weapons & Grenade -->
-        <div>
-            <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Armament</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                <!-- Primary -->
-                <div id="primary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                    <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="primary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Primary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                    <!-- Weapon Categories -->
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Primary Weapons</h3>
+                            <div class="space-y-2 max-h-40 overflow-y-auto">
+                                <label class="flex items-center space-x-2 text-sm">
+                                    <input type="checkbox" id="select-all-primaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
+                                    <span class="text-yellow-200 font-medium">Select All</span>
+                                </label>
+                                <div id="primary-filters" class="space-y-1 pl-4">
+                                    <!-- Primary weapon checkboxes will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Secondary Weapons</h3>
+                            <div class="space-y-2 max-h-40 overflow-y-auto">
+                                <label class="flex items-center space-x-2 text-sm">
+                                    <input type="checkbox" id="select-all-secondaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
+                                    <span class="text-yellow-200 font-medium">Select All</span>
+                                </label>
+                                <div id="secondary-filters" class="space-y-1 pl-4">
+                                    <!-- Secondary weapon checkboxes will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Grenades</h3>
+                            <div class="space-y-2 max-h-32 overflow-y-auto">
+                                <label class="flex items-center space-x-2 text-sm">
+                                    <input type="checkbox" id="select-all-grenades" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
+                                    <span class="text-yellow-200 font-medium">Select All</span>
+                                </label>
+                                <div id="grenade-filters" class="space-y-1 pl-4">
+                                    <!-- Grenade checkboxes will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-yellow-300 mb-3 border-b border-yellow-500/30 pb-1">Stratagems</h3>
+                            <div class="space-y-2 max-h-48 overflow-y-auto">
+                                <label class="flex items-center space-x-2 text-sm">
+                                    <input type="checkbox" id="select-all-stratagems" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400">
+                                    <span class="text-yellow-200 font-medium">Select All</span>
+                                </label>
+                                <div id="stratagem-filters" class="space-y-1 pl-4">
+                                    <!-- Stratagem checkboxes will be populated here -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="primary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">PRIMARY WEAPON</p>
-                    </div>
-                </div>
-                <!-- Secondary -->
-                <div id="secondary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                    <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="secondary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Secondary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                    </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="secondary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">SECONDARY WEAPON</p>
-                    </div>
-                </div>
-                <!-- Grenade -->
-                <div id="grenade-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                    <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="grenade-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Grenade" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                    </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="grenade-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">GRENADE</p>
-                    </div>
+
+                    <!-- Reset Button -->
+                    <button id="reset-filters" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
+                        Reset All Filters
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Stratagems -->
-        <div>
-            <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Stratagems</h2>
-            <div id="stratagem-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <!-- Stratagem slots -->
-                <div id="stratagem-card-0" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                     <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="stratagem-img-0" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 1" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+            <!-- Panel Toggle Button (Mobile) -->
+            <button id="panel-toggle" class="fixed top-4 left-4 lg:hidden z-50 bg-yellow-400 text-zinc-900 p-2 rounded-lg shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+
+            <!-- Main Content -->
+            <div class="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 font-mono space-y-6 md:space-y-8">
+                <div class="text-center space-y-2 z-10">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-yellow-400 uppercase tracking-wider" style="text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 20px #000, 0 0 30px #000;">Loadout Roulette</h1>
+                    <p class="text-zinc-400 text-sm sm:text-base">Super Earth Command has randomized your next drop. Make us proud.</p>
+                </div>
+
+                <div id="loadout-display" class="w-full max-w-7xl space-y-8 z-10">
+                    <!-- Weapons & Grenade -->
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Armament</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                            <!-- Primary -->
+                            <div id="primary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="primary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Primary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="primary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">PRIMARY WEAPON</p>
+                                </div>
+                            </div>
+                            <!-- Secondary -->
+                            <div id="secondary-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="secondary-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Secondary Weapon" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="secondary-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">SECONDARY WEAPON</p>
+                                </div>
+                            </div>
+                            <!-- Grenade -->
+                            <div id="grenade-card" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="grenade-img" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Grenade" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="grenade-name" class="text-lg font-semibold text-zinc-400 transition-colors duration-300">GRENADE</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="stratagem-name-0" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+
+                    <!-- Stratagems -->
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-yellow-300 mb-4 border-b-2 border-yellow-500/50 pb-2 uppercase tracking-widest">Stratagems</h2>
+                        <div id="stratagem-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                            <!-- Stratagem slots -->
+                            <div id="stratagem-card-0" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                 <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="stratagem-img-0" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 1" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="stratagem-name-0" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                </div>
+                            </div>
+                             <div id="stratagem-card-1" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                 <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="stratagem-img-1" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 2" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="stratagem-name-1" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                </div>
+                            </div>
+                             <div id="stratagem-card-2" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                 <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="stratagem-img-2" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 3" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="stratagem-name-2" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                </div>
+                            </div>
+                             <div id="stratagem-card-3" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
+                                 <div class="flex-grow flex items-center justify-center w-full">
+                                    <img id="stratagem-img-3" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 4" class="max-h-32 object-contain filter grayscale transition-all duration-300">
+                                </div>
+                                 <div class="h-16 flex flex-col items-center justify-center text-center">
+                                     <p id="stratagem-name-3" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                 <div id="stratagem-card-1" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                     <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="stratagem-img-1" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 2" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                    </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="stratagem-name-1" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                    </div>
+
+                <div class="py-4 md:py-6 z-10">
+                    <button id="roll-button" class="touch-manipulation bg-yellow-400 text-zinc-900 text-2xl md:text-3xl font-black py-4 px-12 rounded-lg shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-200 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none uppercase tracking-widest">
+                        LOADING DATA...
+                    </button>
                 </div>
-                 <div id="stratagem-card-2" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                     <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="stratagem-img-2" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 3" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                    </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="stratagem-name-2" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                    </div>
-                </div>
-                 <div id="stratagem-card-3" class="loadout-card bg-black/50 border-2 border-zinc-700 rounded-lg p-4 flex flex-col items-center justify-between transition-all duration-300 min-h-[260px] sm:min-h-[300px] backdrop-blur-sm">
-                     <div class="flex-grow flex items-center justify-center w-full">
-                        <img id="stratagem-img-3" src="https://raw.githubusercontent.com/Faryzal2020/helldivers-2-database/main/icons/helldivers-2-logo.webp" alt="Stratagem 4" class="max-h-32 object-contain filter grayscale transition-all duration-300">
-                    </div>
-                     <div class="h-16 flex flex-col items-center justify-center text-center">
-                         <p id="stratagem-name-3" class="text-base font-semibold text-zinc-400 transition-colors duration-300">STRATAGEM</p>
-                    </div>
-                </div>
+                
+                <audio id="deploy-sound" src="https://www.myinstants.com/media/sounds/deploy.mp3" preload="auto"></audio>
+                <audio id="success-sound" src="https://www.myinstants.com/media/sounds/mission-completed-hd2.mp3" preload="auto"></audio>
             </div>
         </div>
-    </div>
-
-    <div class="py-4 md:py-6 z-10">
-        <button id="roll-button" class="touch-manipulation bg-yellow-400 text-zinc-900 text-2xl md:text-3xl font-black py-4 px-12 rounded-lg shadow-lg shadow-yellow-400/30 hover:bg-yellow-300 hover:scale-105 active:scale-95 transition-all duration-200 disabled:bg-zinc-700 disabled:text-zinc-400 disabled:cursor-not-allowed disabled:scale-100 disabled:shadow-none uppercase tracking-widest">
-            LOADING DATA...
-        </button>
-    </div>
-    
-    <audio id="deploy-sound" src="https://www.myinstants.com/media/sounds/deploy.mp3" preload="auto"></audio>
-    <audio id="success-sound" src="https://www.myinstants.com/media/sounds/mission-completed-hd2.mp3" preload="auto"></audio>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const rollButton = document.getElementById('roll-button');
+    const panelToggle = document.getElementById('panel-toggle');
+    const customizationPanel = document.getElementById('customization-panel');
     
     const cardElements = {
         primary: {
@@ -152,7 +233,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     let data = { primaries: [], secondaries: [], grenades: [], stratagems: [] };
+    let filteredData = { primaries: [], secondaries: [], grenades: [], stratagems: [] };
     let isRolling = false;
+
+    // Panel toggle functionality
+    panelToggle.addEventListener('click', () => {
+        customizationPanel.classList.toggle('-translate-x-full');
+    });
+
+    // Close panel when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024 && 
+            !customizationPanel.contains(e.target) && 
+            !panelToggle.contains(e.target) &&
+            !customizationPanel.classList.contains('-translate-x-full')) {
+            customizationPanel.classList.add('-translate-x-full');
+        }
+    });
 
     async function loadData() {
         try {
@@ -174,6 +271,15 @@ document.addEventListener('DOMContentLoaded', () => {
             data.grenades = grenadeData;
             data.stratagems = Object.values(stratagemData).flat();
             
+            // Initialize filtered data with all items
+            filteredData = {
+                primaries: [...data.primaries],
+                secondaries: [...data.secondaries],
+                grenades: [...data.grenades],
+                stratagems: [...data.stratagems]
+            };
+            
+            populateFilters();
             rollButton.disabled = false;
             rollButton.textContent = 'DEPLOY!';
         } catch (error) {
@@ -182,6 +288,75 @@ document.addEventListener('DOMContentLoaded', () => {
             rollButton.classList.add('!bg-red-600', '!text-white');
         }
     }
+
+    function populateFilters() {
+        populateFilterSection('primary-filters', 'select-all-primaries', data.primaries, 'primaries');
+        populateFilterSection('secondary-filters', 'select-all-secondaries', data.secondaries, 'secondaries');
+        populateFilterSection('grenade-filters', 'select-all-grenades', data.grenades, 'grenades');
+        populateFilterSection('stratagem-filters', 'select-all-stratagems', data.stratagems, 'stratagems');
+    }
+
+    function populateFilterSection(containerId, selectAllId, items, dataKey) {
+        const container = document.getElementById(containerId);
+        const selectAllCheckbox = document.getElementById(selectAllId);
+        
+        // Clear existing content
+        container.innerHTML = '';
+        
+        // Create checkboxes for each item
+        items.forEach((item, index) => {
+            const label = document.createElement('label');
+            label.className = 'flex items-center space-x-2 text-xs';
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = true;
+            checkbox.className = 'rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400';
+            checkbox.dataset.category = dataKey;
+            checkbox.dataset.index = index;
+            
+            const span = document.createElement('span');
+            span.textContent = item.name;
+            span.className = 'text-zinc-300';
+            
+            label.appendChild(checkbox);
+            label.appendChild(span);
+            container.appendChild(label);
+            
+            // Add event listener for individual checkboxes
+            checkbox.addEventListener('change', () => updateFilteredData());
+        });
+        
+        // Set up select all functionality
+        selectAllCheckbox.checked = true;
+        selectAllCheckbox.addEventListener('change', (e) => {
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => cb.checked = e.target.checked);
+            updateFilteredData();
+        });
+    }
+
+    function updateFilteredData() {
+        // Update filtered data based on checked items
+        ['primaries', 'secondaries', 'grenades', 'stratagems'].forEach(category => {
+            const checkboxes = document.querySelectorAll(`input[data-category="${category}"]`);
+            filteredData[category] = [];
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const index = parseInt(checkbox.dataset.index);
+                    filteredData[category].push(data[category][index]);
+                }
+            });
+        });
+    }
+
+    // Reset filters functionality
+    document.getElementById('reset-filters').addEventListener('click', () => {
+        const allCheckboxes = document.querySelectorAll('#customization-panel input[type="checkbox"]');
+        allCheckboxes.forEach(cb => cb.checked = true);
+        updateFilteredData();
+    });
     
     const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
     
@@ -193,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return array;
     }
 
-    const getUniqueStratagems = (count) => shuffleArray([...data.stratagems]).slice(0, count);
+    const getUniqueStratagems = (count) => shuffleArray([...filteredData.stratagems]).slice(0, count);
     
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
     
@@ -237,7 +412,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function handleRoll() {
-        if (isRolling || data.primaries.length === 0) return;
+        if (isRolling || filteredData.primaries.length === 0) return;
+        
+        // Check if any category is empty
+        if (filteredData.primaries.length === 0 || 
+            filteredData.secondaries.length === 0 || 
+            filteredData.grenades.length === 0 || 
+            filteredData.stratagems.length < 4) {
+            alert('Please select at least one item from each category and at least 4 stratagems!');
+            return;
+        }
+        
         isRolling = true;
         rollButton.disabled = true;
         rollButton.textContent = 'DEPLOYING...';
@@ -247,18 +432,18 @@ document.addEventListener('DOMContentLoaded', () => {
         await sleep(100);
 
         const selections = {
-            primary: getRandomItem(data.primaries),
-            secondary: getRandomItem(data.secondaries),
-            grenade: getRandomItem(data.grenades),
+            primary: getRandomItem(filteredData.primaries),
+            secondary: getRandomItem(filteredData.secondaries),
+            grenade: getRandomItem(filteredData.grenades),
             stratagems: getUniqueStratagems(4)
         };
         
         const animations = [
-            animateRoll(cardElements.primary, data.primaries, selections.primary, 1500),
-            animateRoll(cardElements.secondary, data.secondaries, selections.secondary, 1700),
-            animateRoll(cardElements.grenade, data.grenades, selections.grenade, 1900),
+            animateRoll(cardElements.primary, filteredData.primaries, selections.primary, 1500),
+            animateRoll(cardElements.secondary, filteredData.secondaries, selections.secondary, 1700),
+            animateRoll(cardElements.grenade, filteredData.grenades, selections.grenade, 1900),
             ...selections.stratagems.map((strat, i) => 
-                animateRoll(cardElements.stratagems[i], data.stratagems, strat, 2100 + i * 200)
+                animateRoll(cardElements.stratagems[i], filteredData.stratagems, strat, 2100 + i * 200)
             )
         ];
 
