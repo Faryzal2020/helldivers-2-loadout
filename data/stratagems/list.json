@@ -1,6 +1,286 @@
 {
-  "offensive": [],
-  "defensive": [],
-  "support": [],
-  "utility": []
+  "offensive": [
+    {
+      "name": "Eagle 110MM Rocket Pods",
+      "icon": "images/stratagems/offensive/Eagle 110MM Rocket Pods.png"
+    },
+    {
+      "name": "Eagle 500KG Bomb",
+      "icon": "images/stratagems/offensive/Eagle 500KG Bomb.png"
+    },
+    {
+      "name": "Eagle Airstrike",
+      "icon": "images/stratagems/offensive/Eagle Airstrike.png"
+    },
+    {
+      "name": "Eagle Cluster Bomb",
+      "icon": "images/stratagems/offensive/Eagle Cluster Bomb.png"
+    },
+    {
+      "name": "Eagle Napalm Airstrike",
+      "icon": "images/stratagems/offensive/Eagle Napalm Airstrike.png"
+    },
+    {
+      "name": "Eagle Smoke Strike",
+      "icon": "images/stratagems/offensive/Eagle Smoke Strike.png"
+    },
+    {
+      "name": "Eagle Strafing Run",
+      "icon": "images/stratagems/offensive/Eagle Strafing Run.png"
+    },
+    {
+      "name": "Orbital 120MM HE Barrage",
+      "icon": "images/stratagems/offensive/Orbital 120MM HE Barrage.png"
+    },
+    {
+      "name": "Orbital 380MM HE Barrage",
+      "icon": "images/stratagems/offensive/Orbital 380MM HE Barrage.png"
+    },
+    {
+      "name": "Orbital Airburst Strike",
+      "icon": "images/stratagems/offensive/Orbital Airburst Strike.png"
+    },
+    {
+      "name": "Orbital EMS Strike",
+      "icon": "images/stratagems/offensive/Orbital EMS Strike.png"
+    },
+    {
+      "name": "Orbital Gas Strike",
+      "icon": "images/stratagems/offensive/Orbital Gas Strike.png"
+    },
+    {
+      "name": "Orbital Gatling Barrage",
+      "icon": "images/stratagems/offensive/Orbital Gatling Barrage.png"
+    },
+    {
+      "name": "Orbital Laser",
+      "icon": "images/stratagems/offensive/Orbital Laser.png"
+    },
+    {
+      "name": "Orbital Napalm Barrage",
+      "icon": "images/stratagems/offensive/Orbital Napalm Barrage.png"
+    },
+    {
+      "name": "Orbital Precision Strike",
+      "icon": "images/stratagems/offensive/Orbital Precision Strike.png"
+    },
+    {
+      "name": "Orbital Railcannon Strike",
+      "icon": "images/stratagems/offensive/Orbital Railcannon Strike.png"
+    },
+    {
+      "name": "Orbital Smoke Strike",
+      "icon": "images/stratagems/offensive/Orbital Smoke Strike.png"
+    },
+    {
+      "name": "Orbital Walking Barrage",
+      "icon": "images/stratagems/offensive/Orbital Walking Barrage.png"
+    }
+  ],
+  "defensive": [
+    {
+      "name": "Anti-Personnel Minefield",
+      "icon": "images/stratagems/defensive/Anti-Personnel Minefield.png"
+    },
+    {
+      "name": "Anti-Tank Emplacement",
+      "icon": "images/stratagems/defensive/Anti-Tank Emplacement.png"
+    },
+    {
+      "name": "Anti-Tank Mines",
+      "icon": "images/stratagems/defensive/Anti-Tank Mines.png"
+    },
+    {
+      "name": "Autocannon Sentry",
+      "icon": "images/stratagems/defensive/Autocannon Sentry.png"
+    },
+    {
+      "name": "Directional Shield",
+      "icon": "images/stratagems/defensive/Directional Shield.png"
+    },
+    {
+      "name": "EMS Mortar Sentry",
+      "icon": "images/stratagems/defensive/EMS Mortar Sentry.png"
+    },
+    {
+      "name": "Flame Sentry",
+      "icon": "images/stratagems/defensive/Flame Sentry.png"
+    },
+    {
+      "name": "Gas Mine",
+      "icon": "images/stratagems/defensive/Gas Mine.png"
+    },
+    {
+      "name": "Gatling Sentry",
+      "icon": "images/stratagems/defensive/Gatling Sentry.png"
+    },
+    {
+      "name": "Grenadier Battlement",
+      "icon": "images/stratagems/defensive/Grenadier Battlement.png"
+    },
+    {
+      "name": "HMG Emplacement",
+      "icon": "images/stratagems/defensive/HMG Emplacement.png"
+    },
+    {
+      "name": "Incendiary Mines",
+      "icon": "images/stratagems/defensive/Incendiary Mines.png"
+    },
+    {
+      "name": "Machine Gun Sentry",
+      "icon": "images/stratagems/defensive/Machine Gun Sentry.png"
+    },
+    {
+      "name": "Mortar Sentry",
+      "icon": "images/stratagems/defensive/Mortar Sentry.png"
+    },
+    {
+      "name": "Rocket Sentry",
+      "icon": "images/stratagems/defensive/Rocket Sentry.png"
+    },
+    {
+      "name": "Shield Generator Relay",
+      "icon": "images/stratagems/defensive/Shield Generator Relay.png"
+    },
+    {
+      "name": "Tesla Tower",
+      "icon": "images/stratagems/defensive/Tesla Tower.png"
+    }
+  ],
+  "support": [
+    {
+      "name": "Airburst Rocket Launcher",
+      "icon": "images/stratagems/support/Airburst Rocket Launcher.png"
+    },
+    {
+      "name": "Anti-Materiel Rifle",
+      "icon": "images/stratagems/support/Anti-Materiel Rifle.png"
+    },
+    {
+      "name": "Arc Thrower",
+      "icon": "images/stratagems/support/Arc Thrower.png"
+    },
+    {
+      "name": "Autocannon",
+      "icon": "images/stratagems/support/Autocannon.png"
+    },
+    {
+      "name": "Commando",
+      "icon": "images/stratagems/support/Commando.png"
+    },
+    {
+      "name": "Emancipator Exosuit",
+      "icon": "images/stratagems/support/Emancipator Exosuit.png"
+    },
+    {
+      "name": "Expendable Anti-Tank",
+      "icon": "images/stratagems/support/Expendable Anti-Tank.png"
+    },
+    {
+      "name": "Flamethrower",
+      "icon": "images/stratagems/support/Flamethrower.png"
+    },
+    {
+      "name": "GL-52 De-Escalator",
+      "icon": "images/stratagems/support/GL-52 De-Escalator.png"
+    },
+    {
+      "name": "Grenade Launcher",
+      "icon": "images/stratagems/support/Grenade Launcher.png"
+    },
+    {
+      "name": "Guard Dog",
+      "icon": "images/stratagems/support/Guard Dog.png"
+    },
+    {
+      "name": "Heavy Machine Gun",
+      "icon": "images/stratagems/support/Heavy Machine Gun.png"
+    },
+    {
+      "name": "Laser Cannon",
+      "icon": "images/stratagems/support/Laser Cannon.png"
+    },
+    {
+      "name": "Machine Gun",
+      "icon": "images/stratagems/support/Machine Gun.png"
+    },
+    {
+      "name": "One True Flag",
+      "icon": "images/stratagems/support/One True Flag.png"
+    },
+    {
+      "name": "Patriot Exosuit",
+      "icon": "images/stratagems/support/Patriot Exosuit.png"
+    },
+    {
+      "name": "Quasar Cannon",
+      "icon": "images/stratagems/support/Quasar Cannon.png"
+    },
+    {
+      "name": "Railgun",
+      "icon": "images/stratagems/support/Railgun.png"
+    },
+    {
+      "name": "Recoilless Rifle",
+      "icon": "images/stratagems/support/Recoilless Rifle.png"
+    },
+    {
+      "name": "Spear",
+      "icon": "images/stratagems/support/Spear.png"
+    },
+    {
+      "name": "StA-X3 W.A.S.P. Launcher",
+      "icon": "images/stratagems/support/StA-X3 W.A.S.P. Launcher.png"
+    },
+    {
+      "name": "Stalwart",
+      "icon": "images/stratagems/support/Stalwart.png"
+    },
+    {
+      "name": "Sterilizer",
+      "icon": "images/stratagems/support/Sterilizer.png"
+    }
+  ],
+  "utility": [
+    {
+      "name": "Ballistic Shield Backpack",
+      "icon": "images/stratagems/utility/Ballistic Shield Backpack.png"
+    },
+    {
+      "name": "Fast Recon Vehicle",
+      "icon": "images/stratagems/utility/Fast Recon Vehicle.png"
+    },
+    {
+      "name": "Guard Dog Breath",
+      "icon": "images/stratagems/utility/Guard Dog Breath.png"
+    },
+    {
+      "name": "Guard Dog K-9",
+      "icon": "images/stratagems/utility/Guard Dog K-9.png"
+    },
+    {
+      "name": "Guard Dog Rover",
+      "icon": "images/stratagems/utility/Guard Dog Rover.png"
+    },
+    {
+      "name": "Hellbomb Portable",
+      "icon": "images/stratagems/utility/Hellbomb Portable.png"
+    },
+    {
+      "name": "Hover Pack",
+      "icon": "images/stratagems/utility/Hover Pack.png"
+    },
+    {
+      "name": "Jump Pack",
+      "icon": "images/stratagems/utility/Jump Pack.png"
+    },
+    {
+      "name": "Shield Generator Pack",
+      "icon": "images/stratagems/utility/Shield Generator Pack.png"
+    },
+    {
+      "name": "Supply Pack",
+      "icon": "images/stratagems/utility/Supply Pack.png"
+    }
+  ]
 } 
