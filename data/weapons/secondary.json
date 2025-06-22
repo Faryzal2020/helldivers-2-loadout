@@ -1,70 +1,104 @@
 [
   {
     "name": "GP-31 Ultimatum",
-    "icon": "images/weapons/secondary/GP-31_Ultimatum_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/GP-31_Ultimatum_Secondary_Weaponry.png",
+    "type": "Grenade Pistol",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "P-72 Crisper",
-    "icon": "images/weapons/secondary/P-72_Crisper_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-72_Crisper_Secondary_Weaponry.png",
+    "type": "Pistol",
+    "warbond": "Freedom's Flame"
   },
   {
     "name": "PLAS-15 Loyalist",
-    "icon": "images/weapons/secondary/PLAS-15_Loyalist_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/PLAS-15_Loyalist_Secondary_Weaponry.png",
+    "type": "Plasma Pistol",
+    "warbond": "Truth Enforcers"
   },
   {
     "name": "GP-31 Grenade Pistol",
-    "icon": "images/weapons/secondary/GP-31_Grenade_Pistol_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/GP-31_Grenade_Pistol_Secondary_Weaponry.png",
+    "type": "Grenade Pistol",
+    "warbond": "Democratic Detonation"
   },
   {
     "name": "LAS-58 Talon",
-    "icon": "images/weapons/secondary/LAS-58_Talon_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/LAS-58_Talon_Secondary_Weaponry.png",
+    "type": "Laser Pistol",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "LAS-7 Dagger",
-    "icon": "images/weapons/secondary/LAS-7_Dagger_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/LAS-7_Dagger_Secondary_Weaponry.png",
+    "type": "Laser Pistol",
+    "warbond": "Cutting Edge"
   },
   {
     "name": "SG-22 Bushwhacker",
-    "icon": "images/weapons/secondary/SG-22_Bushwhacker_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/SG-22_Bushwhacker_Secondary_Weaponry.png",
+    "type": "Shotgun Pistol",
+    "warbond": "Viper Commandos"
   },
   {
     "name": "P-11 Stim Pistol",
-    "icon": "images/weapons/secondary/P-11_Stim_Pistol_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-11_Stim_Pistol_Secondary_Weaponry.png",
+    "type": "Stim Pistol",
+    "warbond": "Chemical Agents"
   },
   {
     "name": "CQC-2 Saber",
-    "icon": "images/weapons/secondary/CQC-2_Saber_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/CQC-2_Saber_Secondary_Weaponry.png",
+    "type": "Melee",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "CQC-5 Combat Hatchet",
-    "icon": "images/weapons/secondary/CQC-5_Combat_Hatchet_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/CQC-5_Combat_Hatchet_Secondary_Weaponry.png",
+    "type": "Melee",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "CQC-30 Stun Baton",
-    "icon": "images/weapons/secondary/CQC-30_Stun_Baton_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/CQC-30_Stun_Baton_Secondary_Weaponry.png",
+    "type": "Melee",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "CQC-19 Stun Lance",
-    "icon": "images/weapons/secondary/CQC-19_Stun_Lance_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/CQC-19_Stun_Lance_Secondary_Weaponry.png",
+    "type": "Melee",
+    "warbond": "Urban Legends"
   },
   {
     "name": "P-4 Senator",
-    "icon": "images/weapons/secondary/P-4_Senator_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-4_Senator_Secondary_Weaponry.png",
+    "type": "Pistol",
+    "warbond": "Steeled Veterans"
   },
   {
     "name": "P-92 Warrant",
-    "icon": "images/weapons/secondary/P-92_Warrant_Secondary_Icon.png"
+    "icon": "images/weapons/secondary/P-92_Warrant_Secondary_Icon.png",
+    "type": "Pistol",
+    "warbond": "NOT FOUND"
   },
   {
     "name": "P-113 Verdict",
-    "icon": "images/weapons/secondary/P-113_Verdict_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-113_Verdict_Secondary_Weaponry.png",
+    "type": "Pistol",
+    "warbond": "Polar Patriots"
   },
   {
     "name": "P-19 Redeemer",
-    "icon": "images/weapons/secondary/P-19_Redeemer_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-19_Redeemer_Secondary_Weaponry.png",
+    "type": "Pistol",
+    "warbond": "Helldivers Mobilize!"
   },
   {
     "name": "P-2 Peacemaker",
-    "icon": "images/weapons/secondary/P-2_Peacemaker_Secondary_Weaponry.png"
+    "icon": "images/weapons/secondary/P-2_Peacemaker_Secondary_Weaponry.png",
+    "type": "Pistol",
+    "warbond": "Steeled Veterans"
   }
 ] 
