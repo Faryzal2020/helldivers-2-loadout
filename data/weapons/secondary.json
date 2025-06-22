@@ -3,7 +3,7 @@
     "name": "GP-31 Ultimatum",
     "icon": "images/weapons/secondary/GP-31_Ultimatum_Secondary_Weaponry.png",
     "type": "Grenade Pistol",
-    "warbond": "NOT FOUND"
+    "warbond": "Force of Law"
   },
   {
     "name": "P-72 Crisper",
@@ -27,7 +27,7 @@
     "name": "LAS-58 Talon",
     "icon": "images/weapons/secondary/LAS-58_Talon_Secondary_Weaponry.png",
     "type": "Laser Pistol",
-    "warbond": "NOT FOUND"
+    "warbond": "Borderline Justice"
   },
   {
     "name": "LAS-7 Dagger",
@@ -51,19 +51,19 @@
     "name": "CQC-2 Saber",
     "icon": "images/weapons/secondary/CQC-2_Saber_Secondary_Weaponry.png",
     "type": "Melee",
-    "warbond": "NOT FOUND"
+    "warbond": "Masters of Ceremony"
   },
   {
     "name": "CQC-5 Combat Hatchet",
     "icon": "images/weapons/secondary/CQC-5_Combat_Hatchet_Secondary_Weaponry.png",
     "type": "Melee",
-    "warbond": "NOT FOUND"
+    "warbond": "Superstore"
   },
   {
     "name": "CQC-30 Stun Baton",
     "icon": "images/weapons/secondary/CQC-30_Stun_Baton_Secondary_Weaponry.png",
     "type": "Melee",
-    "warbond": "NOT FOUND"
+    "warbond": "Superstore"
   },
   {
     "name": "CQC-19 Stun Lance",
@@ -81,7 +81,7 @@
     "name": "P-92 Warrant",
     "icon": "images/weapons/secondary/P-92_Warrant_Secondary_Icon.png",
     "type": "Pistol",
-    "warbond": "NOT FOUND"
+    "warbond": "Superstore"
   },
   {
     "name": "P-113 Verdict",

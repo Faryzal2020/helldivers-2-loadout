@@ -3,7 +3,7 @@
     "name": "G-123 Thermite",
     "icon": "images/weapons/throwable/G-123_Thermite_Throwable_Weaponry.png",
     "type": "Incendiary",
-    "warbond": "NOT FOUND"
+    "warbond": "Democratic Detonation"
   },
   {
     "name": "G-4 Gas",
@@ -21,13 +21,13 @@
     "name": "G-109 Urchin",
     "icon": "images/weapons/throwable/G-109_Urchin_Throwable_Icon.png",
     "type": "Explosive",
-    "warbond": "NOT FOUND"
+    "warbond": "Force of Law"
   },
   {
     "name": "G-50 Seeker",
     "icon": "images/weapons/throwable/G-50_Seeker_Throwable_Weaponry.png",
     "type": "Seeker",
-    "warbond": "NOT FOUND"
+    "warbond": "Servants of Freedom"
   },
   {
     "name": "G-16 Impact",
@@ -45,7 +45,7 @@
     "name": "G-142 Pyrotech",
     "icon": "images/weapons/throwable/G-142_Pyrotech_Throwable_Weaponry.png",
     "type": "Incendiary",
-    "warbond": "NOT FOUND"
+    "warbond": "Masters of Ceremony"
   },
   {
     "name": "G-13 Incendiary Impact",
@@ -81,6 +81,6 @@
     "name": "TED-63 Dynamite",
     "icon": "images/weapons/throwable/TED-63_Dynamite_Throwable_Weaponry.png",
     "type": "Explosive",
-    "warbond": "NOT FOUND"
+    "warbond": "Borderline Justice"
   }
 ] 

@@ -95,10 +95,6 @@
       "icon": "images/stratagems/defensive/Autocannon Sentry.png"
     },
     {
-      "name": "Directional Shield",
-      "icon": "images/stratagems/defensive/Directional Shield.png"
-    },
-    {
       "name": "EMS Mortar Sentry",
       "icon": "images/stratagems/defensive/EMS Mortar Sentry.png"
     },
@@ -189,10 +185,6 @@
       "icon": "images/stratagems/support/Grenade Launcher.png"
     },
     {
-      "name": "Guard Dog",
-      "icon": "images/stratagems/support/Guard Dog.png"
-    },
-    {
       "name": "Heavy Machine Gun",
       "icon": "images/stratagems/support/Heavy Machine Gun.png"
     },
@@ -245,6 +237,14 @@
     {
       "name": "Ballistic Shield Backpack",
       "icon": "images/stratagems/utility/Ballistic Shield Backpack.png"
+    },
+    {
+      "name": "Guard Dog",
+      "icon": "images/stratagems/utility/Guard Dog.png"
+    },
+    {
+      "name": "Directional Shield",
+      "icon": "images/stratagems/utility/Directional Shield.png"
     },
     {
       "name": "Fast Recon Vehicle",

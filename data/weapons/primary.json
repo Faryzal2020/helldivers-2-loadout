@@ -45,7 +45,7 @@
     "name": "Plas-39 Accelerator Rifle",
     "icon": "images/weapons/primary/plas-39-accelerator-rifle.png",
     "type": "Plasma Rifle",
-    "warbond": "NOT FOUND"
+    "warbond": "Killzone Collaboration"
   },
   {
     "name": "Las-16 Sickle",
@@ -135,13 +135,13 @@
     "name": "STA-11 SMG",
     "icon": "images/weapons/primary/sta-11-smg.png",
     "type": "SMG",
-    "warbond": "NOT FOUND"
+    "warbond": "Killzone Collaboration"
   },
   {
     "name": "MP-98 Knight",
     "icon": "images/weapons/primary/mp-98-knight.png",
     "type": "SMG",
-    "warbond": "NOT FOUND"
+    "warbond": "Super Citizen Edition"
   },
   {
     "name": "R-63CS Diligence Counter Sniper",
@@ -153,13 +153,13 @@
     "name": "R-6 Deadeye",
     "icon": "images/weapons/primary/r-6-deadeye.png",
     "type": "Sniper Rifle",
-    "warbond": "NOT FOUND"
+    "warbond": "Borderline Justice"
   },
   {
     "name": "R-2124 Constitution",
     "icon": "images/weapons/primary/r-2124-constitution.png",
     "type": "Rifle",
-    "warbond": "NOT FOUND"
+    "warbond": "Steeled Veterans"
   },
   {
     "name": "R-63 Diligence",
@@ -189,7 +189,7 @@
     "name": "AR-32 Pacifier",
     "icon": "images/weapons/primary/ar-32-pacifier.png",
     "type": "Assault Rifle",
-    "warbond": "NOT FOUND"
+    "warbond": "Force of Law"
   },
   {
     "name": "AR-61 Tenderizer",
@@ -207,7 +207,7 @@
     "name": "STA-52 Assault Rifle",
     "icon": "images/weapons/primary/sta-52-assault-rifle.png",
     "type": "Assault Rifle",
-    "warbond": "NOT FOUND"
+    "warbond": "Killzone Collaboration"
   },
   {
     "name": "AR-23C Liberator Concussive",
