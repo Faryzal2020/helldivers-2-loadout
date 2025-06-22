@@ -45,11 +45,11 @@
     <body>
         <div class="bg-zinc-950 text-white h-screen flex bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png')] overflow-hidden">
             <!-- Left Customization Panel -->
-            <div id="customization-panel" class="w-80 bg-black/90 backdrop-blur-sm border-r border-yellow-500/30 overflow-hidden transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative z-40 h-full flex flex-col">
+            <div id="customization-panel" class="w-80 bg-black/90 backdrop-blur-sm border-r border-yellow-500/30 overflow-hidden transform -translate-x-full lg:translate-x-0 transition-transform duration-300 fixed lg:relative z-40 h-screen max-h-screen flex flex-col">
                 <!-- Panel Header -->
-                <div class="p-4 border-b border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0">
+                <div class="p-2 border-b border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0">
                     <div class="text-center">
-                        <h2 class="text-lg font-bold text-yellow-400 uppercase tracking-wider mb-1">Loadout Filter</h2>
+                        <h2 class="text-sm font-bold text-yellow-400 uppercase tracking-wider">Loadout Filter</h2>
                         <p class="text-xs text-white-400">Customize your randomization pool</p>
                     </div>
                 </div>
@@ -58,22 +58,22 @@
                 <div class="flex-1 flex flex-col h-full">
                     <!-- Primary Weapons Section -->
                     <div class="filter-section h-1/4 flex flex-col">
-                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 border border-yellow-500/30 flex-shrink-0">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 px-2 py-1 border border-yellow-500/30 flex-shrink-0">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Primary Weapons</h3>
-                                <span class="primary-count text-xs text-white-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                <h3 class="text-xs font-semibold text-yellow-300 uppercase tracking-wide">Primary Weapons</h3>
+                                <span class="primary-count text-xs text-white-400 bg-zinc-800 px-1.5 py-0.5 rounded">0/0</span>
                             </div>
                         </div>
-                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-2 flex-1 flex flex-col min-h-0">
+                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-1.5 flex-1 flex flex-col min-h-0">
                             <!-- Search Box -->
-                            <div class="relative mb-2">
+                            <div class="relative mb-1.5">
                                 <input type="text" id="primary-search" placeholder="Search primary weapons..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
                                 <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </div>
                             <!-- Select All -->
-                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-2">
+                            <label class="flex items-center space-x-2 text-xs p-1 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-1.5">
                                 <input type="checkbox" id="select-all-primaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
                                 <span class="text-yellow-200 font-medium">Select All</span>
                             </label>
@@ -86,22 +86,22 @@
 
                     <!-- Secondary Weapons Section -->
                     <div class="filter-section h-1/4 flex flex-col">
-                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 border border-yellow-500/30 flex-shrink-0">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 px-2 py-1 border border-yellow-500/30 flex-shrink-0">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Secondary Weapons</h3>
-                                <span class="secondary-count text-xs text-white-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                <h3 class="text-xs font-semibold text-yellow-300 uppercase tracking-wide">Secondary Weapons</h3>
+                                <span class="secondary-count text-xs text-white-400 bg-zinc-800 px-1.5 py-0.5 rounded">0/0</span>
                             </div>
                         </div>
-                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-2 flex-1 flex flex-col min-h-0">
+                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-1.5 flex-1 flex flex-col min-h-0">
                             <!-- Search Box -->
-                            <div class="relative mb-2">
+                            <div class="relative mb-1.5">
                                 <input type="text" id="secondary-search" placeholder="Search secondary weapons..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
                                 <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </div>
                             <!-- Select All -->
-                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-2">
+                            <label class="flex items-center space-x-2 text-xs p-1 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-1.5">
                                 <input type="checkbox" id="select-all-secondaries" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
                                 <span class="text-yellow-200 font-medium">Select All</span>
                             </label>
@@ -114,22 +114,22 @@
 
                     <!-- Grenades Section -->
                     <div class="filter-section h-1/4 flex flex-col">
-                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 border border-yellow-500/30 flex-shrink-0">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 px-2 py-1 border border-yellow-500/30 flex-shrink-0">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Grenades</h3>
-                                <span class="grenade-count text-xs text-white-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                <h3 class="text-xs font-semibold text-yellow-300 uppercase tracking-wide">Grenades</h3>
+                                <span class="grenade-count text-xs text-white-400 bg-zinc-800 px-1.5 py-0.5 rounded">0/0</span>
                             </div>
                         </div>
-                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-2 flex-1 flex flex-col min-h-0">
+                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-1.5 flex-1 flex flex-col min-h-0">
                             <!-- Search Box -->
-                            <div class="relative mb-2">
+                            <div class="relative mb-1.5">
                                 <input type="text" id="grenade-search" placeholder="Search grenades..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
                                 <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </div>
                             <!-- Select All -->
-                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-2">
+                            <label class="flex items-center space-x-2 text-xs p-1 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-1.5">
                                 <input type="checkbox" id="select-all-grenades" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
                                 <span class="text-yellow-200 font-medium">Select All</span>
                             </label>
@@ -142,22 +142,22 @@
 
                     <!-- Stratagems Section -->
                     <div class="filter-section h-1/4 flex flex-col">
-                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 p-2 border border-yellow-500/30 flex-shrink-0">
+                        <div class="filter-header bg-gradient-to-r from-yellow-900/30 to-yellow-800/30 px-2 py-1 border border-yellow-500/30 flex-shrink-0">
                             <div class="flex items-center justify-between">
-                                <h3 class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Stratagems</h3>
-                                <span class="stratagem-count text-xs text-white-400 bg-zinc-800 px-2 py-1 rounded">0/0</span>
+                                <h3 class="text-xs font-semibold text-yellow-300 uppercase tracking-wide">Stratagems</h3>
+                                <span class="stratagem-count text-xs text-white-400 bg-zinc-800 px-1.5 py-0.5 rounded">0/0</span>
                             </div>
                         </div>
-                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-2 flex-1 flex flex-col min-h-0">
+                        <div class="filter-content bg-zinc-900/50 border-x border-b border-yellow-500/30 p-1.5 flex-1 flex flex-col min-h-0">
                             <!-- Search Box -->
-                            <div class="relative mb-2">
+                            <div class="relative mb-1.5">
                                 <input type="text" id="stratagem-search" placeholder="Search stratagems..." class="w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-xs text-white placeholder-zinc-400 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 focus:outline-none">
                                 <svg class="absolute right-2 top-1.5 w-3 h-3 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                 </svg>
                             </div>
                             <!-- Select All -->
-                            <label class="flex items-center space-x-2 text-xs p-1.5 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-2">
+                            <label class="flex items-center space-x-2 text-xs p-1 bg-zinc-800/50 rounded border border-zinc-700 hover:bg-zinc-700/50 transition-colors mb-1.5">
                                 <input type="checkbox" id="select-all-stratagems" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
                                 <span class="text-yellow-200 font-medium">Select All</span>
                             </label>
@@ -170,24 +170,24 @@
                 </div>
 
                 <!-- Panel Footer -->
-                <div class="p-4 border-t border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0 space-y-3">
+                <div class="p-2 border-t border-yellow-500/30 bg-gradient-to-r from-yellow-900/20 to-yellow-800/20 flex-shrink-0 space-y-2">
                     <!-- Selective Rolling Option -->
-                    <div class="bg-zinc-800/50 border border-yellow-500/30 rounded-lg p-3">
-                        <label class="flex items-center space-x-3 cursor-pointer">
+                    <div class="bg-zinc-800/50 border border-yellow-500/30 rounded-lg p-2">
+                        <label class="flex items-center space-x-2 cursor-pointer">
                             <input type="checkbox" id="selective-rolling" class="rounded bg-zinc-800 border-zinc-600 text-yellow-400 focus:ring-yellow-400 focus:ring-offset-0">
                             <div class="flex-1">
-                                <span class="text-yellow-300 font-semibold text-sm">Selective Rolling</span>
-                                <p class="text-xs text-zinc-400 mt-1">Each stratagem slot picks from a different category (Offensive, Defensive, Support, Utility)</p>
+                                <span class="text-yellow-300 font-semibold text-xs">Selective Rolling</span>
+                                <p class="text-xs text-zinc-400">Each stratagem slot picks from a different category (Offensive, Defensive, Support, Utility)</p>
                             </div>
                         </label>
                     </div>
                     
-                    <button id="reset-filters" class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 px-3 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg">
+                    <button id="reset-filters" class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-1.5 px-3 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg">
                         <div class="flex items-center justify-center space-x-2">
                             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                             </svg>
-                            <span class="text-sm">Reset All Filters</span>
+                            <span class="text-xs">Reset All Filters</span>
                         </div>
                     </button>
                 </div>
