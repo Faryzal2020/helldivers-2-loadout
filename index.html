@@ -39,6 +39,18 @@
                 background: rgba(250, 204, 21, 0.5);
             }
             
+            /* Slower Scrolling */
+            .custom-scrollbar {
+                scroll-behavior: smooth;
+                scroll-padding: 4px;
+            }
+            
+            /* Reduce scroll speed by intercepting wheel events */
+            .slow-scroll {
+                scroll-behavior: smooth;
+                scroll-padding: 4px;
+            }
+            
 
         </style>
     </head>
@@ -446,7 +458,17 @@ document.addEventListener('DOMContentLoaded', () => {
             data.primaries = primaryData;
             data.secondaries = secondaryData;
             data.grenades = grenadeData;
-            data.stratagems = Object.values(stratagemData).flat();
+            
+            // Process stratagems and add category information
+            data.stratagems = [];
+            Object.keys(stratagemData).forEach(category => {
+                stratagemData[category].forEach(stratagem => {
+                    data.stratagems.push({
+                        ...stratagem,
+                        category: category
+                    });
+                });
+            });
             
             // Store stratagem categories separately
             stratagemCategories = {
@@ -500,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sort stratagems by category if this is the stratagem section
         let sortedItems = [...items];
         if (dataKey === 'stratagems') {
-            const categoryOrder = { 'offensive': 0, 'defensive': 1, 'support': 2, 'utility': 3 };
+            const categoryOrder = { 'offensive': 0, 'support': 1, 'utility': 2, 'defensive': 3 };
             sortedItems.sort((a, b) => {
                 const aCat = a.category || 'unknown';
                 const bCat = b.category || 'unknown';
@@ -772,6 +794,61 @@ document.addEventListener('DOMContentLoaded', () => {
         rollButton.textContent = 'GO AGAIN, DIVER!';
     }
     
+    // Slower scrolling for filter lists
+    function addSlowScrolling() {
+        const scrollContainers = document.querySelectorAll('.custom-scrollbar');
+        
+        scrollContainers.forEach(container => {
+            let isScrolling = false;
+            
+            container.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                
+                if (!isScrolling) {
+                    isScrolling = true;
+                    
+                    // Reduce scroll speed by dividing the delta
+                    const scrollAmount = e.deltaY * 0.3; // Adjust this value to make it slower/faster
+                    
+                    // Smooth scroll animation
+                    const startTime = performance.now();
+                    const startScrollTop = container.scrollTop;
+                    const targetScrollTop = Math.max(0, Math.min(
+                        container.scrollHeight - container.clientHeight,
+                        startScrollTop + scrollAmount
+                    ));
+                    
+                    function animateScroll(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const duration = 150; // Animation duration in ms
+                        
+                        if (elapsed < duration) {
+                            const progress = elapsed / duration;
+                            // Easing function for smooth animation
+                            const easeProgress = 1 - Math.pow(1 - progress, 3);
+                            
+                            container.scrollTop = startScrollTop + (targetScrollTop - startScrollTop) * easeProgress;
+                            requestAnimationFrame(animateScroll);
+                        } else {
+                            container.scrollTop = targetScrollTop;
+                            isScrolling = false;
+                        }
+                    }
+                    
+                    requestAnimationFrame(animateScroll);
+                }
+            }, { passive: false });
+        });
+    }
+    
+    // Initialize slow scrolling after data is loaded
+    const originalLoadData = loadData;
+    loadData = async function() {
+        await originalLoadData();
+        // Add slow scrolling after the filter containers are populated
+        setTimeout(addSlowScrolling, 100);
+    };
+
     rollButton.addEventListener('click', handleRoll);
     rollButton.disabled = true;
     loadData();
